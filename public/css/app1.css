@@ -1,0 +1,226 @@
+/* Pre-formating */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Global styles */
+:root {
+    --blue: #2081b9;
+    --red: #c73838;
+    --gray: #929090;
+    --gray-hover: #fffafa;
+    --white: #ffffff;
+    --black: #131924;
+    --shodow: 0 0 10px var(--gray);
+}
+
+/* Start Header */
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    /* margin-bottom: 20px; */
+    box-shadow: var(--shodow);
+}
+
+.header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.header nav .title span {
+    font-size: 1em;
+    font-weight: 7500;
+    text-transform: uppercase;
+}
+
+.header nav .fa-navicon {
+    font-size: large;
+    cursor: pointer;
+}
+
+.header .fa-cross {
+    color: var(--red);
+    text-shadow: -6px 2px 5px rgb(153, 142, 142);
+}
+
+.header #menu {
+    display: none;
+}
+
+.header ul {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--white);
+    background-color: var(--white);
+    padding: 10px;
+
+}
+
+.header ul a {
+    margin: 5px 0;
+    color: var(--black);
+    width: 100%;
+    padding: 10px 5px;
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+.header ul a:hover {
+    background-color: var(--gray-hover);
+    text-decoration: underline;
+    transition: .5s;
+}
+
+
+.header ul a:last-child {
+    background-color: var(--blue);
+    width: 100%;
+    font-size: 1em;
+    padding: 8px;
+    color: var(--white);
+    text-align: center;
+    border-radius: 2px;
+}
+
+.header ul a:last-child:hover {
+    text-decoration: none;
+    background-color: #22709e;
+}
+
+.header ul .fa-close {
+    /* width: 100%; */
+    font-size: 1.3em;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: 90%;
+    text-align: right;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 920px) {
+    .header #menu {
+        display: block;
+    }
+
+    .header #open-menu {
+        display: none;
+    }
+
+    .header ul #close-menu {
+        display: none;
+    }
+
+    .header #menu {
+        display: flex;
+    }
+
+    .header {
+        padding: 6px 40px;
+    }
+
+    .header nav{
+        width: 30%;
+    }
+
+    .header nav .title span {
+        font-size: 1.2em;
+    }
+
+    .header nav .fa-cross {
+        font-size: 1.6em;
+    }
+
+    .header ul {
+        width: 70%;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 10px 0 0;
+
+    }
+
+    .header ul a {
+        text-transform: uppercase;
+        font-size: .98em;
+    }
+
+}
+
+/*End header*?
+
+/* Start User's actions */
+
+    .user-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 50px 10px;
+    }
+
+    .user-container .actions{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .user-container .actions a{
+        width: 120px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+        border-radius: 3px;
+        box-shadow: var(--shodow);
+        transition: .6s;
+    }
+
+    .user-container .actions a i{
+        font-size: 1em;
+        color: var(--gray);
+        border: 1px solid var(--blue);
+        padding: 3px 5px;
+        border-radius: 2px;
+        margin-bottom: 5px;
+    }
+    
+    .user-container .actions a span{
+        color: var(--blue);
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+
+    .user-container .actions a:hover{
+        transform: scale(.9);
+    }
+
+/* End User's actions */

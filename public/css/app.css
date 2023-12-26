@@ -1,0 +1,943 @@
+/* Pre-formating */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Global styles */
+:root {
+    --blue: #2081b9;
+    --red: #c73838;
+    --gray: #929090;
+    --gray-hover: #fffafa;
+    --white: #ffffff;
+    --black: #131924;
+    --shodow: 0 0 10px var(--gray);
+}
+
+/* Anucios */
+.start {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--black);
+    margin-bottom: 10px;
+}
+
+.carousel,
+.slide {
+    width: 100%;
+}
+
+.start p {
+    font-family: monospace;
+    font-size: 1.8em;
+    text-align: center;
+    animation-name: animStart;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes animStart {
+    0% {
+        transform: scale(.6);
+    }
+
+    50% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.empty-project {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-project img {
+    width: 320px;
+    padding: 0 5px;
+}
+
+.empty-project span {
+    font-size: 1.1em;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+    color: var(--blue);
+    text-align: center;
+}
+
+/* Anucios */
+
+/* Start caixa de informacao sobre ausencia de algun conteudo */
+
+.empty {
+    color: var(--red);
+    text-shadow: var(--shodow);
+    letter-spacing: 18px;
+}
+
+/* End caixa de informacao sobre ausencia de algun conteudo */
+
+
+/* Start Header */
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    box-shadow: var(--shodow);
+    z-index: 999;
+}
+
+.header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.header nav .title span {
+    font-size: 1em;
+    font-weight: 7500;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header nav .fa-navicon {
+    font-size: large;
+    cursor: pointer;
+}
+
+.header .fa-cross {
+    color: var(--red);
+    text-shadow: -6px 2px 5px rgb(153, 142, 142);
+}
+
+.header #menu {
+    display: none;
+}
+
+.header ul {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: var(--white);
+    padding: 20px 10px;
+
+}
+
+.header ul a {
+    margin: 5px 0;
+    color: var(--black);
+    width: 100%;
+    padding: 10px 5px;
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+.header ul a:hover {
+    background-color: var(--gray);
+    text-decoration: underline;
+    transition: .5s;
+}
+
+.form-search {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    overflow: hidden;
+}
+
+.form-search input {
+    width: 80%;
+    font-size: 1.3em;
+    padding: 8px;
+}
+
+.form-search button {
+    background-color: var(--blue);
+    width: 20%;
+    color: var(--white);
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .form-search {
+        width: 100%;
+        margin: 0 5px;
+        border-radius: 5px;
+    }
+}
+
+
+.header ul .btn-login {
+    background-color: var(--blue);
+    width: 100%;
+    font-size: 1em;
+    padding: 8px 0;
+    color: var(--white);
+    text-align: center;
+    border-radius: 2px;
+}
+
+.header ul .btn-login .fa {
+    margin-right: 5px;
+}
+
+.header ul .btn-login:hover {
+    text-decoration: none;
+    background-color: #22709e;
+}
+
+.header ul .fa-close {
+    /* width: 100%; */
+    font-size: 1.3em;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: 90%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.header ul .profile {
+    margin: 20px;
+}
+
+.header ul .profile .fa {
+    font-size: 1.5em;
+    color: var(--blue);
+    cursor: pointer;
+    transition: .5s;
+    background-color: var(--gray-hover);
+}
+
+.header ul .profile .fa .nome {
+    font-size: .7em;
+    color: var(--black);
+    margin-left: 10px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header ul .profile .fa:hover {
+    font-size: 1.6em;
+}
+
+.header ul .profile .options {
+    position: absolute;
+    top: 80px;
+    box-shadow: var(--shodow);
+    background-color: var(--white);
+    border-radius: 0 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: none;
+}
+
+.header ul .profile .options a {
+    color: var(--white);
+    text-align: center;
+    font-size: .9em;
+    margin: 0;
+    padding: 5px 20px;
+    color: var(--blue);
+    background-color: var(--white);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header ul .profile .options a .fa {
+    margin-right: 5px;
+    font-size: .89em;
+}
+
+.header ul .profile .options a:last-child {
+    color: var(--red);
+}
+
+.header ul .profile .options a:hover {
+    text-decoration: none;
+    color: #6eb5df;
+}
+
+@media screen and (min-width: 920px) {
+
+
+
+    .header #menu {
+        display: block;
+        top: 0;
+    }
+
+    .header #open-menu {
+        display: none;
+    }
+
+    .header ul #close-menu {
+        display: none;
+    }
+
+    .header #menu {
+        display: flex;
+        height: 0;
+        top: 10px;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 6px 40px;
+    }
+
+
+    .header ul form {
+        margin-top: 0;
+        background-color: var(--white);
+        border: none;
+    }
+
+    .header ul form input {
+        font-size: 1.1em;
+        border: 1px solid purple;
+        padding: 0px;
+    }
+
+    .header ul form button {
+        width: 20%;
+        color: var(--blue);
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    .header nav .title span {
+        font-size: 1.2em;
+    }
+
+    .header nav .fa-cross {
+        font-size: 1.6em;
+    }
+
+    .header ul {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 10px 0 0;
+
+    }
+
+    .header ul a {
+        text-transform: uppercase;
+        font-size: .98em;
+    }
+
+    .header ul a:hover {
+        background-color: var(--white);
+        text-decoration: underline;
+    }
+
+    .header ul .profile .options {
+        top: 50px;
+    }
+}
+
+/* End Header */
+
+/* Start container of the cards(posts) */
+
+
+.what {
+    text-transform: uppercase;
+    border-left: 5px solid var(--red);
+    padding: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 5px;
+    color: var(--red);
+    margin-left: 5%;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 10px 0;
+    padding: 0 5px;
+}
+
+.container .card {
+    width: 320px;
+    padding: 0;
+    box-shadow: 0 0 2px var(--gray);
+    margin: 40px 12px;
+    overflow: hidden;
+}
+
+.container .card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 2px;
+}
+
+.container .card .title {
+    font-size: 1.1em;
+    color: var(--red);
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container .card .vocation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 3px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.container .card .vocation a {
+    width: 30%;
+    padding-left: 5px;
+    padding-right: 15px;
+    color: var(--blue);
+    text-decoration: underline;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container .card .vocation .fa {
+    color: var(--gray);
+    margin-right: 4px;
+}
+
+.container .card .description {
+    width: 320px;
+    height: 90px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--black);
+    font-size: large;
+    padding: 8px 4px;
+    background-color: var(--gray-hover);
+}
+
+.container .card .btn {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 0;
+}
+
+@media screen and (min-width: 920px) {
+    .what {
+        margin-top: 40px;
+        margin-left: 11%;
+    }
+
+    .container {
+        margin: 10px 8%;
+    }
+}
+
+/* End container of the cards(posts) */
+
+/* Start login's card */
+
+.login {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.login h1 {
+    text-transform: uppercase;
+    color: var(--blue);
+    font-size: 2em;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 50px 0;
+}
+
+.login form label {
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    color: var(--black);
+}
+
+.login form input {
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 1.2em;
+    color: var(--black);
+    border: 1px solid var(--blue);
+    /* box-shadow: var(--shodow); */
+}
+
+.login form button {
+    margin-top: 30px;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 3px;
+    ;
+    font-size: 1.2em;
+}
+
+/* End login's card */
+
+
+/* Start individul's post informations */
+
+.post {
+    width: 100%;
+    padding: 60px 10px;
+}
+
+.post h3 {
+    width: 100%;
+    text-transform: uppercase;
+    color: var(--red);
+    padding-left: 5px;
+    margin-bottom: 25px;
+    border-left: 6px solid var(--black);
+}
+
+.post p {
+    margin-top: 20px;
+    overflow-wrap: break-word;
+}
+
+.post .btns {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+}
+
+.post .btns a {
+    width: 50%;
+    color: var(--white);
+    padding: 5px 0;
+    text-align: center;
+}
+
+.post .btns a:last-child {
+    background-color: var(--red);
+}
+
+.post img {
+    width: 100%;
+    max-height: 450px;
+}
+
+.post p {
+    font-size: large;
+    color: var(--black);
+    padding: 5px;
+    border-left: 6px solid var(--red);
+}
+
+@media screen and (min-width: 920px) {
+    .post {
+        width: 100%;
+        display: flex;
+        margin-top: 60px;
+        padding: 0 60px;
+    }
+
+    .post div {
+        width: 55%;
+        margin-right: 50px;
+    }
+
+    .post p {
+        width: 45%;
+        font-size: larger;
+        color: var(--black);
+        padding: 0 10px;
+        text-justify: newspaper;
+        line-height: 25px;
+        border-left: 6px solid var(--red);
+    }
+}
+
+/* End individul's post informations */
+
+/* Start user's profile */
+
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.profile .user {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.profile .user .fa-user-circle {
+    font-size: 5em;
+    color: var(--black);
+}
+
+.profile .user li {
+    padding: 5px 0;
+    font-size: 1.1em;
+}
+
+.profile .posts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+
+.profile h4 {
+    border-bottom: 3px solid var(--black);
+    margin-left: 5%;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.profile .posts .card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 3px;
+    box-shadow: var(--shodow);
+    margin: 30px 10px;
+    overflow: hidden;
+}
+
+.profile .posts .card img {
+    width: 100%;
+}
+
+.profile .posts .card p {
+    width: 95%;
+    text-transform: uppercase;
+    text-align: start;
+    margin: 6px;
+    padding-left: 5px;
+    color: var(--red);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile .posts .card a {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+
+/* End user's profile */
+
+/* Start User's actions */
+
+.user-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.user-container .actions {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 920px) {
+    .user-container {
+        flex-direction: column;
+    }
+
+    .user-container .actions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 0px;
+        padding: 0 5px;
+    }
+}
+
+.user-container .actions a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.user-container .actions a i {
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+/* .user-container .actions a {
+    width: 180px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    border-radius: 3px;
+    box-shadow: var(--shodow);
+    transition: .6s;
+}
+
+.user-container .actions a i {
+    font-size: 1em;
+    color: var(--gray);
+    border: 1px solid var(--blue);
+    padding: 3px 5px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.user-container .actions a span {
+    color: var(--blue);
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.user-container .actions a:hover {
+    transform: scale(.9);
+}
+
+*/
+/* End User's actions */
+
+/* Start default fromat of the forms */
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.form h2 {
+    text-transform: uppercase;
+    margin-bottom: -20px;
+    color: var(--blue);
+    font-size: 1.5em;
+}
+
+.form form {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 10px;
+    /* margin: 10px 0; */
+    /* box-shadow: var(--shodow); */
+}
+
+.form form label {
+    color: var(--blue);
+    font-size: 1em;
+    text-transform: capitalize;
+    margin: 20px 0 2px 0;
+}
+
+
+.form form input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 1em;
+    color: var(--black);
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+}
+
+.form form input[type="file"] {
+    width: 320px;
+}
+
+.form form img {
+    width: 320px;
+}
+
+.form form button {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 1em;
+    margin-top: 30px;
+    border-radius: 3px;
+}
+
+/* End default fromat of the forms */
+
+/* Start users container style */
+
+.container-users {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+.container-users .card-user {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px 20px 40px;
+    margin: 40px;
+    box-shadow: var(--shodow);
+}
+
+.container-users .card-user .fa {
+    font-size: 4em;
+}
+
+.container-users .card-user li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsisos;
+    font-size: larger;
+}
+
+.container-users .card-user .btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    background-color: var(--red);
+    border-radius: 2px;
+}
+
+.container-users .card-user .btns a {
+    padding: 5px 14px;
+    color: var(--white);
+}
+
+.container-users .card-user .btns a:last-child {
+    background-color: var(--blue);
+}
+
+.container-users .card-user .btns a:first-child {
+    background-color: rgb(248, 187, 19);
+    color: var(--black);
+}
+
+/* End users container style */
+
+.cultos-list-pub {
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-top: 30px;
+}
+
+.culto-pdf {
+    width: 80%;
+}
+
+.culto-pdf i {
+
+    font-size: 1.5em;
+    padding: 0 4px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 30vh !important;
+}
+
+/* Footer */
